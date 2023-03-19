@@ -6,6 +6,7 @@ class CommandsEnum(Enum):
     ADD = "add"
     SHOW = "show"
     DELETE = "delete"
+    EDIT = "edit"
     EXIT = "exit"
 
     @classmethod

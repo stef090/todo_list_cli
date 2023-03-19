@@ -21,7 +21,10 @@ class TodoList:
         self.tasks.append(text)
 
     def edit(self, index: int, text: str) -> None:
-        pass
+        try:
+            self.tasks[index] = text
+        except IndexError:
+            print(f"No item present at index {index + 1}")
 
     def show(self) -> str:
         print(self)
