@@ -1,4 +1,4 @@
-from todo_list import TodoList
+from app.todo_list import TodoList
 
 
 class TestTodoList:
