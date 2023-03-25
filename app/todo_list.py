@@ -11,11 +11,12 @@ class TodoList:
     def __len__(self) -> int:
         return len(self.tasks)
 
-    def delete(self, index: int) -> None:
+    def complete(self, index: int) -> None:
         try:
-            del self.tasks[index]
-        except IndexError:
+            self.tasks.pop(index)
+        except IndexError as exc:
             print(f"No item present at index {index + 1}")
+            raise exc
 
     def add(self, text: str) -> None:
         self.tasks.append(text)
@@ -23,8 +24,9 @@ class TodoList:
     def edit(self, index: int, text: str) -> None:
         try:
             self.tasks[index] = text
-        except IndexError:
+        except IndexError as exc:
             print(f"No item present at index {index + 1}")
+            raise exc
 
     def show(self) -> str:
         print(self)

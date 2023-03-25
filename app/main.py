@@ -34,7 +34,7 @@ if __name__ == "__main__":
                     item_index_adjusted = int(item_index) - 1
                     if item_index_adjusted <= 0:
                         item_index = input("Invalid index entered, please enter an index greater than 1.")
-                    todo_list.delete(index=item_index_adjusted)
+                    todo_list.complete(index=item_index_adjusted)
                 except ValueError:
                     print("Invalid index entered, please enter an index greater than 1.")
             case CommandsEnum.EDIT.value:
