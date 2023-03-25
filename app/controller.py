@@ -1,12 +1,15 @@
 import sys
+from typing import Optional
 
 from app.enums import CommandsEnum
 from app.todo_list import TodoList
+from storage.interface import AbstractStorage
 
 
 class TodoListController:
-    def __init__(self, todo_items: TodoList):
+    def __init__(self, todo_items: TodoList, storage: Optional[AbstractStorage] = None):
         self.todo_items = todo_items
+        self.storage = storage
 
     def loop(self):
         while True:
@@ -59,3 +62,8 @@ class TodoListController:
                     sys.exit(0)
                 case _:
                     print("Action not recognized.")
+
+    def store_todo_list(self):
+        if not self.storage:
+            raise UsageError()
+        self.storage.save(self.todo_items)

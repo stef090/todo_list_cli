@@ -1,0 +1,2 @@
+class MissingDependencyError(Exception):
+    pass
