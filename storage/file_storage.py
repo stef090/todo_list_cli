@@ -11,3 +11,7 @@ class FileStorage(AbstractStorage):
         with open(file=self.file_path, mode="w") as file:
             for item in item_list:
                 file.writelines(f"{item}\n")
+
+    def read(self) -> List[str]:
+        with open(file=self.file_path, mode="w") as file:
+            file.read()

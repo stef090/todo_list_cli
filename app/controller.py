@@ -2,6 +2,7 @@ import sys
 from typing import Optional
 
 from app.enums import CommandsEnum
+from app.exceptions import MissingDependencyError
 from app.todo_list import TodoList
 from storage.interface import AbstractStorage
 
@@ -65,5 +66,5 @@ class TodoListController:
 
     def store_todo_list(self):
         if not self.storage:
-            raise UsageError()
-        self.storage.save(self.todo_items)
+            raise MissingDependencyError()
+        self.storage.save(self.todo_items.tasks)
