@@ -5,7 +5,7 @@ from typing import List
 class CommandsEnum(Enum):
     ADD = "add"
     SHOW = "show"
-    DELETE = "delete"
+    COMPLETE = "complete"
     EDIT = "edit"
     EXIT = "exit"
 
