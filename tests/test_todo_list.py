@@ -22,14 +22,14 @@ class TestTodoList:
         todo_list_printed = self.todo_list.show()
         assert "Test TODO" in todo_list_printed
 
-    def test_delete_item_from_todo_list(self):
+    def test_complete_item_from_todo_list(self):
         self.todo_list.add("New Task")
         self.todo_list.add("New Task 2")
 
         self.todo_list.complete(0)
         assert len(self.todo_list) == 1
 
-    def test_delete_item_from_todo_list_index_not_found(self):
+    def test_complete_item_from_todo_list_index_not_found(self):
         self.todo_list.add("New Task")
         self.todo_list.add("New Task 2")
 
